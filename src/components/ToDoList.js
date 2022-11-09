@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import CreateTask from '../modals/CreateTask';
 import { useState } from 'react';
+import Card from './Card';
 
 const ToDoList =() => {
     const [modal, setModal] = useState(false);
@@ -38,7 +39,8 @@ const ToDoList =() => {
 
     </div>
     <div className='task-container'>
-        {taskList.map((obj)=> <li>{obj.Name}</li>)}
+        {taskList.map((obj, index)=> <Card taskObj={obj} index={index}/>)}
+
 
 
 
