@@ -3,7 +3,9 @@ export default class Login extends Component {
   render() {
     return (
       <form>
-        <h3>Log In</h3>
+        <h3>Welcome to Notes App</h3>
+        <h4> Login to save all Notes and access them from anywhere </h4>
+        <br></br>
         <div className="mb-3">
           <label>Email address</label>
           <input
