@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
-const CreateTask = ({modal, toggle,}) => {
+const CreateTask = ({modal, toggle, save}) => {
     const [taskName, setTaskName] =useState('');
     const [description, setDescription] = useState('');
     
+    // description is category and tasklist is task details
     
     const handleChange =(e) => {
         const {name, value} =e.target
@@ -15,6 +16,14 @@ const CreateTask = ({modal, toggle,}) => {
         else{
             setDescription(value)
         }
+    }
+     //handleSave fcn will push taskObj in taskList array
+       const handleSave =() =>{
+       let taskObj={}
+        taskObj["Name"]= taskName
+        taskObj["Description"]= description
+        save(taskObj)
+       
     }
  
     return (
@@ -30,14 +39,11 @@ const CreateTask = ({modal, toggle,}) => {
                         <div className='form-group'>
                             <label>Task Details</label>
                             <textarea rows="5" className='form-control' value={description} onChange={handleChange} name ="description"></textarea>
-
                         </div>
-
-                    </form>
-                
+                    </form>     
             </ModalBody>
             <ModalFooter>
-            <Button color="primary" onClick={toggle}>Create</Button>{' '}
+            <Button color="primary" onClick={handleSave}>Create</Button>{' '}
             <Button color="secondary" onClick={toggle}>Cancel</Button>
             </ModalFooter>
       </Modal>

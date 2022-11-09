@@ -4,9 +4,17 @@ import { useState } from 'react';
 
 const ToDoList =() => {
     const [modal, setModal] = useState(false);
+    const [taskList, setTaskList] =useState([]) 
     const toggle =()=> {
         setModal(!modal);
     }
+    const saveTask =(taskObj) =>{
+        //templist is temporary list 
+        let tempList = taskList
+        tempList.push(taskObj)
+        setTaskList(tempList)
+    }
+
 
   return (
     <>
@@ -16,9 +24,13 @@ const ToDoList =() => {
 
     </div>
     <div className='task-container'>
+        {taskList.map((obj)=> <li>{obj.Name}</li>)}
+
+
+
 
     </div>
-    <CreateTask toggle ={toggle} modal={modal}/>
+    <CreateTask toggle ={toggle} modal={modal} save ={saveTask}/>
      
     </>
      );
