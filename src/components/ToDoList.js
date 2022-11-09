@@ -1,5 +1,5 @@
 import React from 'react';
-import createTask from '../modals/createTask';
+import CreateTask from '../modals/CreateTask';
 import { useState } from 'react';
 
 const ToDoList =() => {
@@ -12,13 +12,13 @@ const ToDoList =() => {
     <>
      <div className='header text-center'>
         <h3>Notes App</h3>
-        <button className="btn btn-primary mt-2">Create Task</button>
+        <button className="btn btn-primary mt-2" onClick={()=> setModal(true)}>Create Task</button>
 
     </div>
     <div className='task-container'>
 
     </div>
-    <createTask toggle ={toggle} modal={modal}/>
+    <CreateTask toggle ={toggle} modal={modal}/>
      
     </>
      );
