@@ -1,4 +1,5 @@
 import React from 'react'
+import EditTask from '../modals/EditTask';
 
 const Card = ({taskObj, index, deleteTask}) => {
    
@@ -41,6 +42,7 @@ const Card = ({taskObj, index, deleteTask}) => {
             <i class="fas fa-trash-alt" style = {{"color" : colors[index%5].primaryColor, "cursor" : "pointer"}} onClick={handleDelete}></i>
         </div>
 </div>
+<EditTask modal ={modal} toggle ={toggle} update ={update}/>
 </div>
 );
 };

@@ -22,7 +22,7 @@ const ToDoList =() => {
         tempList.splice(index, 1)
         localStorage.setItem("taskList", JSON.stringify(tempList))
          setTaskList(tempList)
-         // this fucntion 
+         // this function reloads the page while simultaneously deleting the card
          window.location.reload()
     }
 
