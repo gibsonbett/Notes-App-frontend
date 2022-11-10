@@ -3,10 +3,10 @@ export default class SignUp extends Component {
   render() {
     return (
       <form>
-        <h3>Welcome to Notes App</h3>
-        <h4>Sign in to save all Notes and access them from anywhere </h4>
+        <h3><i>Welcome to Notes App</i></h3>
+        <h4><i>Sign in to save all Notes and access them from anywhere</i></h4>
         <br></br>
-        <div className="mb-3">
+        <div className="cont-1">
           <label>First name</label>
           <input
             type="text"
@@ -14,11 +14,11 @@ export default class SignUp extends Component {
             placeholder="First name"
           />
         </div>
-        <div className="mb-3">
+        <div className="cont-1">
           <label>Last name</label>
           <input type="text" className="form-control" placeholder="Last name" />
         </div>
-        <div className="mb-3">
+        <div className="cont-1">
           <label>Email</label>
           <input
             type="email"
@@ -26,7 +26,7 @@ export default class SignUp extends Component {
             placeholder="Enter email"
           />
         </div>
-        <div className="mb-3">
+        <div className="cont-1">
           <label>Password</label>
           <input
             type="password"
@@ -34,6 +34,7 @@ export default class SignUp extends Component {
             placeholder="Enter password"
           />
         </div>
+        <br></br>
         <div className="d-grid">
           <button type="submit" className="btn btn-primary">
             Sign Up
