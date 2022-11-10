@@ -2,6 +2,8 @@ import React, { useEffect } from 'react';
 import CreateTask from '../modals/CreateTask';
 import { useState } from 'react';
 import Card from './Card';
+import Search from './Search';
+
 
 const ToDoList =() => {
     const [modal, setModal] = useState(false);
@@ -48,12 +50,15 @@ const ToDoList =() => {
 
   return (
     <>
+    
      <div className='header text-center'>
         <h3>Notes App</h3>
         <button className="btn btn-primary mt-2" onClick={()=> setModal(true)}>Create Task</button>
-
+       
+      <Search />
     </div>
     <div className='task-container'>
+       
         {taskList.map((obj, index)=> <Card taskObj={obj} index={index} deleteTask={deleteTask} updateListArray ={updateListArray}/>)}
 
 
@@ -62,6 +67,7 @@ const ToDoList =() => {
 
     </div>
     <CreateTask toggle ={toggle} modal={modal} save ={saveTask}/>
+    
      
     </>
      );
