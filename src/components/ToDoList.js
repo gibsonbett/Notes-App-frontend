@@ -25,7 +25,13 @@ const ToDoList =() => {
          // this function reloads the page while simultaneously deleting the card
          window.location.reload()
     }
-
+    const updateListArray =(obj, index) =>{
+    let templist = taskList
+    templist[index] =obj
+    localStorage.setItem("taskList", JSON.stringify(templist))
+    setTaskList(templist)
+    window.location.reload()
+    }
     const toggle =()=> {
         setModal(!modal);
     }
@@ -48,7 +54,7 @@ const ToDoList =() => {
 
     </div>
     <div className='task-container'>
-        {taskList.map((obj, index)=> <Card taskObj={obj} index={index} deleteTask={deleteTask}/>)}
+        {taskList.map((obj, index)=> <Card taskObj={obj} index={index} deleteTask={deleteTask} updateListArray ={updateListArray}/>)}
 
 
 
