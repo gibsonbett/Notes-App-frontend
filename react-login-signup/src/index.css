@@ -41,7 +41,7 @@ body, html, .App, #root, .auth-wrapper {
   transition: all .3s;
 }
 .auth-wrapper .form-control:focus {
-  border-color: #167bff;
+  border-color: white;
   box-shadow: none;
 }
 .auth-wrapper h3 {
@@ -60,8 +60,5 @@ body, html, .App, #root, .auth-wrapper {
   padding-top: 10px;
   color: #7f7d7d;
   margin: 0;
-}
-.forgot-password a {
-  color: #167bff;
 }
 

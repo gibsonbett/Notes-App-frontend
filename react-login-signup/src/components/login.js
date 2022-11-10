@@ -3,17 +3,10 @@ export default class Login extends Component {
   render() {
     return (
       <form>
-<<<<<<< HEAD
         <h3><i>Welcome to Notes App</i></h3>
         <h4> <i>Login to save all Notes and access them from anywhere </i></h4>
         <br></br>
         <div className="cont-1">
-=======
-        <h3>Welcome to Notes App</h3>
-        <h4> Login to save all Notes and access them from anywhere </h4>
-        <br></br>
-        <div className="mb-3">
->>>>>>> 515b77c7c9c527f639a5a86cb6361cf3941be0ba
           <label>Email address</label>
           <input
             type="email"
@@ -45,10 +38,10 @@ export default class Login extends Component {
         <br></br>
         <div className="d-grid">
           <button type="submit" className="btn btn-primary">
-            Submit
+            Login
           </button>
         </div>
       </form>
     )
   }
-}
+} 
