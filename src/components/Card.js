@@ -38,7 +38,6 @@ const Card = ({taskObj, index, deleteTask, updateListArray}) => {
   const handleDelete = ()=> {
     deleteTask(index)
  }
-
   return (
     <div class = "card-wrapper mr-5">
     <div class = "card-top" style={{"background-color": colors[index%5].primaryColor}}></div>

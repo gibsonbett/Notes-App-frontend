@@ -5,10 +5,13 @@ import Card from './Card';
 import Search from './Search';
 
 
-const ToDoList =() => {
+
+
+
+    const ToDoList =() => {
     const [modal, setModal] = useState(false);
     const [taskList, setTaskList] =useState([]) 
-
+  
     useEffect(()=>{
         //this will store all our tasks in this variable
         let arr =localStorage.getItem("taskList")
@@ -46,7 +49,8 @@ const ToDoList =() => {
         setModal(false)
         setTaskList(tempList)
     }
-
+    const [searchText, setSearchText] = useState ("");
+    //searchResults = {taskList.filter((task)=> task.text.toLowerCase().includes(searchText))}
 
   return (
     <>
@@ -54,18 +58,15 @@ const ToDoList =() => {
      <div className='header text-center'>
         <h3>Notes App</h3>
         <button className="btn btn-primary mt-2" onClick={()=> setModal(true)}>Create Task</button>
-       
-      <Search />
+        <Search handleSearchNote = {setSearchText}/>
     </div>
     <div className='task-container'>
        
         {taskList.map((obj, index)=> <Card taskObj={obj} index={index} deleteTask={deleteTask} updateListArray ={updateListArray}/>)}
-
-
-
-
-
-    </div>
+        
+    </div> 
+   
+    
     <CreateTask toggle ={toggle} modal={modal} save ={saveTask}/>
     
      
