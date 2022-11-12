@@ -8,7 +8,7 @@ function Signup() {
 
   const handleSignUp = (event) => {
     event.preventDefault()
-    navigate('/sign-in')
+    navigate('/')
   }
 
   return (

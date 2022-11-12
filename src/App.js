@@ -12,7 +12,7 @@ function App() {
       <NavBar/>
         <Routes>
           <Route path='/signup' element = { <SignUp />}/>
-          <Route exact path='/login' element = { <Login />}/>
+          <Route exact path='/' element = { <Login />}/>
           <Route exact path='/todolist' element = { <ToDoList />}/> 
         </Routes>
        

@@ -7,7 +7,7 @@ function Login() {
     const handleLogin =(event)=>{
       event.preventDefault();
       // console.log("I work");
-      navigate("/home")
+      navigate("/todolist")
     }
   return (
     <form className='container'>
