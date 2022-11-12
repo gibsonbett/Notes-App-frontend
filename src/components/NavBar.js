@@ -4,10 +4,7 @@ import { NavLink } from "react-router-dom";
 function NavBar() {
     return (
       <div className="navbar">
-        {/* <NavLink id="nav_items" to="/">
-          Home
-        </NavLink> */}
-        <NavLink id="nav_items" to="/login">
+        <NavLink id="nav_items" to="/">
         <button className="btn btn-primary mt-2">Login</button>
           </NavLink>
         <NavLink id="nav_items" to="/todolist">
