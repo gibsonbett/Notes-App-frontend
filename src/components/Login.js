@@ -1,8 +1,16 @@
-import React, { Component } from 'react'
-export default class Login extends Component {
-  render() {
-    return (
-      <form>
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import "../components/login.css";
+
+function Login() {
+    const navigate= useNavigate()
+    const handleLogin =(event)=>{
+      event.preventDefault();
+      // console.log("I work");
+      navigate("/home")
+    }
+  return (
+    <form className='container'>
         <h3><i>Welcome to Notes App</i></h3>
         <h4> <i>Login to save all Notes and access them from anywhere </i></h4>
         <br></br>
@@ -37,9 +45,10 @@ export default class Login extends Component {
         </div>
         <br></br>
         <div className="d-grid">
-        <button id="login" type="submit" onclick="location.href='/'">Log In</button>
+      <button id="login" type="submit" onClick={(e) => handleLogin(e)}>Login</button>
         </div>
       </form>
-    )
-  }
-} 
+  )
+}
+
+export default Login

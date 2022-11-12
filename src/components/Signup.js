@@ -1,8 +1,18 @@
-import React, { Component } from 'react'
-export default class SignUp extends Component {
-  render() {
-    return (
-      <form>
+import React from 'react'
+import { useNavigate } from 'react-router-dom'
+import "../components/login.css"
+
+
+function Signup() {
+  const navigate = useNavigate()
+
+  const handleSignUp = (event) => {
+    event.preventDefault()
+    navigate('/sign-in')
+  }
+
+  return (
+    <form className="container">
         <h3><i>Welcome to Notes App</i></h3>
         <h4><i>Sign in to save all Notes and access them from anywhere</i></h4>
         <br></br>
@@ -41,9 +51,11 @@ export default class SignUp extends Component {
           </button>
         </div>
         <p className="forgot-password text-right">
-          Already have an account? <a href="/sign-in">Login Here</a>
+          Already have an account? 
+          <button className="btn btn-primary" onClick={(e) => handleSignUp(e)}>Login Here</button>
         </p>
       </form>
-    )
-  }
+  )
 }
+
+export default Signup
