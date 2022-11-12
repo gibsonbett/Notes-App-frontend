@@ -1,13 +1,26 @@
 import './App.css';
+import { Route, Routes } from 'react-router-dom';
 import ToDoList from './components/ToDoList';
 import 'bootstrap/dist/css/bootstrap.min.css'
+import SignUp from './components/Signup';
+import Login from './components/Login.js';
 function App() {
   return (
     <div className="App">
-      <ToDoList />
-     
+      {/* <ToDoList /> */}
+      
+        <Routes>
+          <Route path='/' element = { <SignUp />}/>
+          <Route exact path='/sign-in' element = { <Login />}/>
+          <Route exact path='/home' element = { <ToDoList />}/> 
+        </Routes>
+       
     </div>
+
   );
-}
+     
+    }
+     
+
 
 export default App;
