@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import "../components/login.css";
 
 function Login({ setLoggedIn }) {
     const initFormState = {
@@ -39,20 +39,27 @@ function Login({ setLoggedIn }) {
 
     return (
         <div class='login-box'>
-            <h2>Login</h2>
+            <h2><b>Login</b></h2>
+            <br></br>
+            <h3><b>Welcome to Notes App</b></h3>
+            <br></br>
+            <h4> <i>Login to save all Notes and access them from anywhere </i></h4>
+            <br></br>
             <form className = 'formWrapper' onSubmit = {handleSubmit} autoComplete="off">
                 <div class = "user-box">
                 <input className = 'input' type = 'text' name = 'username' placeholder = 'Username' value = {formState.username} onChange = {formChange} required />
                 </div>
+                <br></br>
                 <div class="user-box">
                 <input className = 'input' type = 'password' name = 'password' placeholder = 'Password' value = {formState.password} onChange = {formChange} required />
                 </div>
-                <div class="user-box">
-                <button className = 'formBtn' type = 'submit'>Login</button>
-                </div>
-                <div id='button-form'>
-            <p className = 'signup'>Don't have an account?<br />
-                 <a className = 'signupLink' href = '/users/new' >Register</a></p>
+                <br></br>
+                <div class="button-form">
+                <button id = 'formBtn' type = 'submit'>LOGIN</button>
+                <div class='register'>
+                  <p className = 'signup'><h5>Don't have an account?</h5><br />
+                  <a id = 'signupLink' href = '/users/new' >Register</a></p>
+                 </div>
                  </div>
             </form>
             

@@ -1,9 +1,71 @@
-/* @import url(); */
 * {
     box-sizing: border-box;
 }
 
 body {
-    background: #131315;
-    
+    background-image:url('./../../assets//Notes.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 3px -100px;
+}
+h2{
+    color: black;
+}
+h3,h4,h5 {
+    color: white;
+}
+
+.login-box {
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    background-image:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url('./../../assets//Notes.jpg');
+    background-size: cover;
+    box-shadow: 0 15px 25px rgba(33, 80, 167, 0.7);
+    border-radius: 10px;
+}
+
+.login-box h2 {
+    margin: 0 0 30px;
+    padding: 0;
+    text-align: center;
+}
+
+.login-box .user-box input {
+    position: relative;
+    width: 100%;
+    padding: 10px 0;
+}
+
+#formBtn {
+    padding: 10px 20px;
+    color: rgb(177, 177, 209);
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+    letter-spacing: 4px;
+    border: 1px solid #8F7CEC;
+    margin: auto;
+}
+
+#formBtn:hover {
+    background: rgb(109, 109, 170);
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgb(109, 109, 170), 0 0 25px rgb(109, 109, 170), 0 0 50px rgb(109, 109, 170), 0 0 100px rgb(109, 109, 170);
+}
+
+.button-form{
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+}
+
+#signupLink{
+    font-size: large;
+    color:;
+    margin: auto;
+    text-align: center;
 }
