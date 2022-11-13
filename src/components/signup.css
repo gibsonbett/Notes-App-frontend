@@ -8,14 +8,11 @@ body {
     background-repeat: no-repeat;
     background-position: 3px -100px;
 }
-h2{
+h2,h3{
     color: black;
 }
-h3,h4,h5 {
-    color: white;
-}
 
-.login-box {
+.signup-box {
     position: absolute;
     top: 40%;
     left: 40%;
@@ -27,13 +24,13 @@ h3,h4,h5 {
     border-radius: 10px;
 }
 
-.login-box h2 {
+.signup-box h2 {
     margin: 0 0 30px;
     padding: 0;
     text-align: center;
 }
 
-.login-box .user-box input {
+.signup-box .user-box input {
     position: relative;
     width: 100%;
     padding: 10px 0;
@@ -63,8 +60,3 @@ h3,h4,h5 {
     margin-top: 20px;
 }
 
-#signupLink{
-    font-size: large;
-    margin: auto;
-    text-align: center;
-}
