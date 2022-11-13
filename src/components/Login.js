@@ -38,14 +38,24 @@ function Login({ setLoggedIn }) {
     }
 
     return (
-        <div>
+        <div class='login-box'>
+            <h2>Login</h2>
             <form className = 'formWrapper' onSubmit = {handleSubmit} autoComplete="off">
+                <div class = "user-box">
                 <input className = 'input' type = 'text' name = 'username' placeholder = 'Username' value = {formState.username} onChange = {formChange} required />
+                </div>
+                <div class="user-box">
                 <input className = 'input' type = 'password' name = 'password' placeholder = 'Password' value = {formState.password} onChange = {formChange} required />
+                </div>
+                <div class="user-box">
                 <button className = 'formBtn' type = 'submit'>Login</button>
-            </form>
+                </div>
+                <div id='button-form'>
             <p className = 'signup'>Don't have an account?<br />
-                Create one <a className = 'signupLink' href = '/users/new' >HERE</a></p>
+                 <a className = 'signupLink' href = '/users/new' >Register</a></p>
+                 </div>
+            </form>
+            
         </div>
     )
 }
