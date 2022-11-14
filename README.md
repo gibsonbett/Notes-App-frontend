@@ -4,11 +4,11 @@ Portfolio
 ### By Gibson Bett, Cynthia Ontiri, Rhoda Gachimu, Isir Malak, Milton Kihara and David Gitonga
 
 ## Table of Contents
-+ [Introduction]
-+ [Description]
-+ [Technology Used]
-+ [Licence]
-+ [Authors Info]
++ [Description](#description)
++ [Introduction](#introduction)
++ [Technology Used](#technology used)
++ [License](#license)
++ [Authors Info](#author-Info)
 
 ## Introduction
 - Build a frontend application with React.
