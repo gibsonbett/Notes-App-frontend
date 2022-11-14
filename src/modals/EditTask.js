@@ -3,34 +3,28 @@ import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import { useEffect } from 'react';
 import { useState } from 'react';
 
-const EditTask = ({modal, toggle, updateTask, taskObj}) => {
-    const [taskName, setTaskName] = useState('');
-    const [description, setDescription] = useState('');
-
-    const handleChange = (e) => {
-        
-        const {name, value} = e.target
-
-        if(name === "taskName"){
-            setTaskName(value)
-        }else{
-            setDescription(value)
+const EditTask = ({modal,loggedIn, handleNewPost, toggle,taskObj}) => {
+    const [form, setForm] = useState(
+        {
+            category: "",
+            todos: ""
         }
+    )
 
 
-    }
 
-    useEffect(() => {
-        setTaskName(taskObj.Name)
-        setDescription(taskObj.Description)
-    },[])
+    
 
     const handleUpdate = (e) => {
-        e.preventDefault();
-        let tempObj = {}
-        tempObj['Name'] = taskName
-        tempObj['Description'] = description
-        updateTask(tempObj)
+        fetch(`http://localhost:9293/users/${loggedIn.id}/notes/${taskObj.id}`, {
+            method: 'PATCH',
+            headers: {
+                'Content-type':'application/json'
+            },
+            body: JSON.stringify(form)
+        })
+        handleNewPost()
+        toggle()
     }
 
     return (
@@ -40,11 +34,11 @@ const EditTask = ({modal, toggle, updateTask, taskObj}) => {
             
                     <div className = "form-group">
                         <label>Task Name</label>
-                        <input type="text" className = "form-control" value = {taskName} onChange = {handleChange} name = "taskName"/>
+                        <input type="text" className = "form-control" value = {form.category} onChange={(e) => setForm({...form, category:e.target.value})}  name = "categories"/>
                     </div>
                     <div className = "form-group">
                         <label>Description</label>
-                        <textarea rows = "5" className = "form-control" value = {description} onChange = {handleChange} name = "description"></textarea>
+                        <textarea rows = "5" className = "form-control" value = {form.todos}onChange={(e) => setForm({...form, todos:e.target.value})} name = "todos"></textarea>
                     </div>
                 
             </ModalBody>

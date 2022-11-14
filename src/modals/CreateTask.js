@@ -1,30 +1,34 @@
 import React, { useState } from 'react'
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
-const CreateTask = ({modal, toggle, save}) => {
-    const [taskName, setTaskName] =useState('');
-    const [description, setDescription] = useState('');
+const CreateTask = ({modal, toggle, loggedIn, handleNewPost}) => {
+    
+
+    const [form, setForm] = useState(
+        {
+            category: "",
+            todos: ""
+        }
+    )
     
     // description is category and tasklist is task details
     
-    const handleChange =(e) => {
-        const {name, value} =e.target
-
-        if(name === "taskName"){
-            setTaskName(value)
-        }
-        else{
-            setDescription(value)
-        }
-    }
+   
      //handleSave fcn will push taskObj in taskList array
-       const handleSave =() =>{
-       let taskObj={}
-        taskObj["Name"]= taskName
-        taskObj["Description"]= description
-        save(taskObj)
-       
+     const handleSave =  (e) => {
+        e.preventDefault()
+        fetch(`http://localhost:9293/users/${loggedIn.id}/notes`, {
+            method: 'POST',
+            headers: {
+                'Content-type':'application/json'
+            },
+            body: JSON.stringify(form)
+        })
+            handleNewPost()
+            toggle()
+            
     }
+
  
     return (
         <Modal isOpen={modal} toggle={toggle}>
@@ -34,11 +38,11 @@ const CreateTask = ({modal, toggle, save}) => {
                     <form>
                         <div className='form-group'>
                             <label>Category</label>
-                            <input type="text" className='form-control' value={taskName} onChange ={handleChange} name="taskName"/>
+                            <input type="text" className='form-control' value={form.category} onChange={(e) => setForm({...form, category:e.target.value})} name="taskName"/>
                         </div>
                         <div className='form-group'>
                             <label>Tasks</label>
-                            <textarea rows="5" className='form-control' value={description} onChange={handleChange} name ="description"></textarea>
+                            <textarea rows="5" className='form-control' value={form.todos} onChange={(e) => setForm({...form, todos:e.target.value})} name ="description"></textarea>
                         </div>
                     </form>     
             </ModalBody>
